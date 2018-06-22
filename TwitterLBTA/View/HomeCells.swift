@@ -22,6 +22,8 @@ class UserHeader: DatasourceCell {
     override func setupViews() {
         super.setupViews()
         
+        backgroundColor = .white
+        
         self.separatorLineView.isHidden = false
         self.separatorLineView.backgroundColor = UIColor(r: 222, g: 222, b: 222)
         
@@ -42,28 +44,34 @@ class UserFooter: DatasourceCell {
     
     override func setupViews() {
         super.setupViews()
+        
+        // make fake seperator in sections
+        let whiteBackgroundView = UIView()
+        whiteBackgroundView.backgroundColor = .white
+        
+        self.addSubview(whiteBackgroundView)
         self.addSubview(textLabel)
-        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        whiteBackgroundView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 14, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 14, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
 }
 
 class UserCell: DatasourceCell {
     
     override var datasourceItem: Any? {
-        didSet {
-            print(datasourceItem!)
-            
+        didSet {            
             guard let user = datasourceItem as? User else { return }
             
             nameLabel.text = user.name
             usernameLabel.text = user.userName
             bioTextView.text = user.bioText
-            profileImageView.image = user.profileImage
+            profileImageView.loadImage(urlString: user.profileImageUrl)
         }
     }
     
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
+    let profileImageView: CachedImageView = {
+        let imageView = CachedImageView()
         imageView.image = #imageLiteral(resourceName: "profile_image")
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
@@ -110,6 +118,8 @@ class UserCell: DatasourceCell {
     override func setupViews() {
         super.setupViews()
         
+        backgroundColor = .white
+
         self.separatorLineView.isHidden = false
         self.separatorLineView.backgroundColor = UIColor(r: 222, g: 222, b: 222)
         

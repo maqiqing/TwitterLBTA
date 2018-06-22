@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1E92D8A81695D2B1D7805473 /* Pods_TwitterLBTA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7189001D5A61532CDD066F3C /* Pods_TwitterLBTA.framework */; };
+		2AD670F820DB8857002B69F1 /* HomeDataSourceController+NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD670F720DB8857002B69F1 /* HomeDataSourceController+NavBar.swift */; };
+		2AD670FA20DB909B002B69F1 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD670F920DB909B002B69F1 /* TweetCell.swift */; };
+		2AD670FC20DB97DA002B69F1 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD670FB20DB97DA002B69F1 /* Tweet.swift */; };
+		2AD670FF20DCC897002B69F1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD670FE20DCC897002B69F1 /* Service.swift */; };
 		2AFEF40320D8FFF300BF19C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEF40220D8FFF300BF19C8 /* AppDelegate.swift */; };
 		2AFEF40A20D8FFF500BF19C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AFEF40920D8FFF500BF19C8 /* Assets.xcassets */; };
 		2AFEF40D20D8FFF500BF19C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFEF40B20D8FFF500BF19C8 /* LaunchScreen.storyboard */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AD670F720DB8857002B69F1 /* HomeDataSourceController+NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDataSourceController+NavBar.swift"; sourceTree = "<group>"; };
+		2AD670F920DB909B002B69F1 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		2AD670FB20DB97DA002B69F1 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		2AD670FE20DCC897002B69F1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2AFEF3FF20D8FFF300BF19C8 /* TwitterLBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterLBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFEF40220D8FFF300BF19C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFEF40920D8FFF500BF19C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AD670FD20DCC88D002B69F1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2AD670FE20DCC897002B69F1 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		2AFEF3F620D8FFF300BF19C8 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +83,7 @@
 		2AFEF40120D8FFF300BF19C8 /* TwitterLBTA */ = {
 			isa = PBXGroup;
 			children = (
+				2AD670FD20DCC88D002B69F1 /* Service */,
 				2AFEF41C20DA304700BF19C8 /* Controller */,
 				2AFEF41B20DA304300BF19C8 /* Model */,
 				2AFEF41A20DA303300BF19C8 /* View */,
@@ -83,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFEF41F20DA310800BF19C8 /* HomeCells.swift */,
+				2AD670F920DB909B002B69F1 /* TweetCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,6 +110,7 @@
 			children = (
 				2AFEF41D20DA30FC00BF19C8 /* HomeDataSource.swift */,
 				2AFEF42120DA4C0100BF19C8 /* User.swift */,
+				2AD670FB20DB97DA002B69F1 /* Tweet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFEF41820DA229700BF19C8 /* HomeDataSourceController.swift */,
+				2AD670F720DB8857002B69F1 /* HomeDataSourceController+NavBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,11 +217,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TwitterLBTA/Pods-TwitterLBTA-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/LBTAComponents/LBTAComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TRON/TRON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTAComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TRON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -249,9 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AFEF42020DA310800BF19C8 /* HomeCells.swift in Sources */,
+				2AD670F820DB8857002B69F1 /* HomeDataSourceController+NavBar.swift in Sources */,
 				2AFEF41920DA229700BF19C8 /* HomeDataSourceController.swift in Sources */,
+				2AD670FC20DB97DA002B69F1 /* Tweet.swift in Sources */,
+				2AD670FA20DB909B002B69F1 /* TweetCell.swift in Sources */,
 				2AFEF42220DA4C0100BF19C8 /* User.swift in Sources */,
 				2AFEF41720D900B600BF19C8 /* HomeController.swift in Sources */,
+				2AD670FF20DCC897002B69F1 /* Service.swift in Sources */,
 				2AFEF40320D8FFF300BF19C8 /* AppDelegate.swift in Sources */,
 				2AFEF41E20DA30FC00BF19C8 /* HomeDataSource.swift in Sources */,
 			);
